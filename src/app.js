@@ -1,3 +1,18 @@
+class IndecissionApp extends React.Component {
+    render() {
+        return (
+            <div>
+                <Header/>
+                {/*<p>{app.options.length ? app.optionTitle : app.noOptionTitle}</p>*/}
+                <Action/>
+                {/*<button onClick={onRemoveAll}>Remove All</button>*/}
+                <Options/>
+                <AddOption/>
+            </div>
+        );
+    }
+}
+
 class Header extends React.Component {
     render() {
         return (
@@ -24,6 +39,17 @@ class Options extends React.Component {
         return (
             <div>
                 Options component here
+                <Option/>
+            </div>
+        );
+    }
+}
+
+class Option extends React.Component {
+    render() {
+        return (
+            <div>
+                Option component here
             </div>
         );
     }
@@ -39,15 +65,4 @@ class AddOption extends React.Component{
     }
 }
 
-const jsx = (
-    <div>
-        <Header/>
-        {/*<p>{app.options.length ? app.optionTitle : app.noOptionTitle}</p>*/}
-        <Action/>
-        {/*<button onClick={onRemoveAll}>Remove All</button>*/}
-        <Options/>
-        <AddOption/>
-    </div>
-);
-
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<IndecissionApp/>, document.getElementById('app'));
